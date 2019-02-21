@@ -10,11 +10,12 @@ https://libraries.io/github/hypersad/atom-armv7l
 ## Building
 Gettings sources & building
 Firstly, clone Atom sources from 1.23-releases branch and this repository, then merge them:
-
-`git clone https://github.com/atom/atom.git -b 1.23-releases
+```
+git clone https://github.com/atom/atom.git -b 1.23-releases
 git clone https://github.com/hypersad/atom-armv7l.git
 cp -r atom-armv7l/script/* atom/script/
-rm -rf atom-armv7l`
+rm -rf atom-armv7l
+```
 Now you could start building:
 
 `cd atom
@@ -28,9 +29,11 @@ We will use mksnapshot binaries for i386/amd64 with armv7l as target to get star
 
 ## Get suitable mksnapshot binary. For now it is mksnapshot-v1.6.0-linux-armv7l:
 
-`wget https://github.com/electron/electron/releases/download/v1.6.0/mksnapshot-v1.6.0-linux-armv7l.zip
+```
+wget https://github.com/electron/electron/releases/download/v1.6.0/mksnapshot-v1.6.0-linux-armv7l.zip
 unzip -j mksnapshot-v1.6.0-linux-armv7l.zip mksnapshot
-rm mksnapshot-v1.6.0-linux-armv7l.zip`
+rm mksnapshot-v1.6.0-linux-armv7l.zip
+```
 Get generated startup snapshot (out/startup.js) from your armv7l machine. You could do it via scp, for example:
 
 `scp helix@192.168.1.30:/home/helix/atom/out/startup.js startup.js`
@@ -69,19 +72,20 @@ Git.
 
 C++ 11 Toolchain, development headers for GNOME Keyring, and other build tools.
 `sudo apt-get install build-essential git libgnome-keyring-dev fakeroot rpm libx11-dev libxkbfile-dev`
-
-`git clone https://github.com/atom/atom.git -b 1.23-releases
+```
+git clone https://github.com/atom/atom.git -b 1.23-releases
 git clone https://github.com/osamazhar/atom-armv7l-1.git (originally cloned from ricehiroko, thanks to him)
 cp -r atom-armv7l/script/* atom/script/
 rm -rf atom-armv7l
-cd atom`
+cd atom
+```
 
 Before you start building you will have to remove some packages as they may not be found by atom build script. For me, they are as follows:
-
-`github
+```
+github
 language-c
-language-javascript`
-
+language-javascript
+```
 Remove them from packages.json from the root folder.
 
 Now build the sources:
