@@ -86,7 +86,7 @@ github
 language-c
 language-javascript
 ```
-Remove them from packages.json from the root folder.
+Remove them from `packages.json` from the root folder.
 
 Now build the sources:
 
