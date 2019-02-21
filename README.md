@@ -116,15 +116,16 @@ For a desktop icon, you can create one like this:
 
 create a file in `~/Desktop` as `Atom.desktop` and add the details as follows:
 
-`[Desktop Entry]`
-`Version=1.0`
-`Type=Application`
-`Terminal=false`
-`Exec=command to run here`
-`Name=visible name here`
-`Comment=comment here`
-`Icon=icon path here`
-
+```
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=command to run here
+Name=visible name here
+Comment=comment here
+Icon=icon path here
+```
 Icon can be found at `/opt/atom/resources/app.asar.unpacked/resources/atom.png`
 
 And now you should have a working atom in your raspi 3B (or possibly on other armv7l systems).
